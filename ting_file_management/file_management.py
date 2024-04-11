@@ -1,7 +1,7 @@
 import sys
 
 
-def txt_importer(path_file):
+def txt_importer(path_file: str) -> None | list[str]:
     try:
         splitted = path_file.split(".")
         if splitted[len(splitted) - 1] != "txt":

@@ -3,7 +3,7 @@ from ting_file_management.queue import Queue
 from ting_file_management.file_management import txt_importer
 
 
-def process(path_file, instance: Queue):
+def process(path_file: str, instance: Queue) -> None:
     if (file := txt_importer(path_file)) is None:
         return None
 
@@ -18,7 +18,7 @@ def process(path_file, instance: Queue):
         instance.enqueue(dict)
 
 
-def remove(instance: Queue):
+def remove(instance: Queue) -> None:
     if instance.__len__() == 0:
         print("Não há elementos", file=sys.stdout)
     else:
@@ -27,7 +27,7 @@ def remove(instance: Queue):
         print(f"Arquivo {file_removed} removido com sucesso", file=sys.stdout)
 
 
-def file_metadata(instance: Queue, position):
+def file_metadata(instance: Queue, position: int) -> None:
     if position < 0 or position >= instance.__len__():
         print("Posição inválida", file=sys.stderr)
     else:
