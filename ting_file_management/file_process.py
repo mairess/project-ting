@@ -4,12 +4,12 @@ from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance: Queue):
-    if txt_importer(path_file) is None:
+    if (file := txt_importer(path_file)) is None:
         return None
 
     dict = {
         "nome_do_arquivo": path_file,
-        "qtd_linhas": len(txt_importer(path_file)),
+        "qtd_linhas": len(file),
         "linhas_do_arquivo": txt_importer(path_file),
     }
 
