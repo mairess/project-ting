@@ -2,8 +2,6 @@ import sys
 from ting_file_management.queue import Queue
 from ting_file_management.file_management import txt_importer
 
-my_queue = Queue()
-
 
 def process(path_file, instance: Queue):
     if txt_importer(path_file) is None:
